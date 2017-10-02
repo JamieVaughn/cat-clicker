@@ -12,7 +12,8 @@ body{
     margin: 1em;
 }
 .cat-img{
-    width: 100%;
+    max-width: 232px;
+    height: auto;
     border: 1px solid #111;
     box-sizing: border-box;
 }
