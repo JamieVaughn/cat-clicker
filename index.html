@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <style>
+    .cats {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Cat selector template -->
+  <select name="cats" id="cat-list">
+  </select>
+
+  <!-- Cat view template -->
+  <div class="cat">
+    <h2 class="cat-name"></h2>
+    <img src="" alt="cute cat" class="cat-img">
+    <div class="cat-count"></div>
+  </div>
+
+
+  <script src="octopus.js"></script>
+</body>
+
+</html>
