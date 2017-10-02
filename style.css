@@ -36,3 +36,34 @@ body{
     transform: rotate(90deg);
     transition: transform 350ms;
 }
+
+.admin-button {
+  position: fixed;
+  top: 10px;
+  left: 260px;
+  font-size: 2em;
+}
+
+.admin {
+  position: fixed;
+  top: 100px;
+  left: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin > input {
+  margin-bottom: 15px;
+}
+
+.buttons {
+  display: flex;
+}
+
+.button {
+  flex-grow: 1;
+}
+
+.hidden {
+  display: none;
+}
