@@ -17,6 +17,7 @@ const octopus = {
     // initialize views
     catView.init();
     catListView.init();
+    adminView.init();
   },
 
   // getter for model.cats
@@ -99,6 +100,61 @@ const catListView = {
       this.catListEl.appendChild(option);
     }
 
+  }
+};
+
+// premium pro version only!
+const adminView = {
+  init() {
+    // store DOM elements for later access
+    this.adminBtn = document.querySelector('.admin-button');
+    this.adminArea = document.querySelector('.admin');
+    this.saveBtn = document.querySelector('.save');
+    this.cancelBtn = document.querySelector('.cancel');
+    this.adminName = document.querySelector('#name');
+    this.adminImg = document.querySelector('#imgUrl');
+    this.adminCount = document.querySelector('#clicks');
+
+    // admin click listener to toggle visibility
+    this.adminBtn.addEventListener('click', () => {
+      this.adminArea.classList.toggle('hidden');
+    });
+
+    // cancel button hides admin area
+    this.cancelBtn.addEventListener('click', () =>
+      this.adminArea.classList.add('hidden')
+    );
+
+    // save button grabs values, sets current cat with new data
+    this.saveBtn.addEventListener('click', () => {
+      // grab values of new data
+      const newCat = {
+        name: this.adminName.value,
+        imgSrc: this.adminImg.value,
+        clickCount: this.adminCount.value
+      };
+
+      // get current index of cat
+      const currentCatIndex = octopus.cats.findIndex(
+        cat => octopus.currentCat === cat
+      );
+
+      // set cat with new data, set new currentCat
+      octopus.cats[currentCatIndex] = newCat;
+      octopus.currentCat = octopus.cats[currentCatIndex];
+
+      // update catView and catListView
+      catView.render();
+      catListView.render();
+    });
+
+    this.render();
+  },
+  render() {
+    const currentCat = octopus.currentCat;
+    this.adminName.value = currentCat.name;
+    this.adminImg.value = currentCat.imgSrc;
+    this.adminCount.value = currentCat.clickCount;
   }
 };
 
