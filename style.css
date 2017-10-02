@@ -1,0 +1,37 @@
+:root{
+    --bg: darkmagenta;
+}
+body{
+    font-size: 1.5em;
+    color: white;
+    font-weight: 800;
+}
+#cat-list{
+    display: block;
+    padding: 0.5em 2em;
+    margin: 1em;
+}
+.cat-img{
+    width: 100%;
+    border: 1px solid #111;
+    box-sizing: border-box;
+}
+.cat{
+    background: var(--bg);
+    border-radius: 0.5em;
+    display: inline-block;
+    box-shadow: 13px 13px 13px #888;
+    border: 1px solid #111;
+}
+.cat-name{
+    text-align: center;
+    -webkit-text-stroke: 1px black;
+}
+.cat-count{
+    text-align: center;
+    -webkit-text-stroke: 1px black;
+}
+.tapped{
+    transform: rotate(90deg);
+    transition: transform 350ms;
+}
